@@ -8,8 +8,8 @@ module.exports = {
         filename: './app.js'
     },
     devServer: {
-        port:8080,
-        contetBase: './public',
+        port: 8080,
+        contentBase: './public',
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -17,7 +17,7 @@ module.exports = {
             modules: __dirname + '/node_modules'
         }
     },
-    plugins: [
+    plugins: [ 
         new ExtractTextPlugin('app.css')
     ],
     module: {
@@ -26,14 +26,14 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                preset: ['es2015', 'react'],
+                presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
             }
         }, {
-            text: /\.css$/,
+            test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
-            test: /\.woff|.woff2|.tff|.eot|.svg*.*$/,
+            test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
             loader: 'file'
         }]
     }
