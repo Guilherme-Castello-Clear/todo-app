@@ -5,7 +5,10 @@
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name todo-app"
+    "production": "pm2 start src/loader.js --name todo-app ",
+    "stop": "pm2 stop src/loader.js",
+    "delete": "pm2 delete src/loader.js"
+
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,6 @@
     "pm2": "2.1.5"
   },
   "devDependencies": {
-    "nodemon": "1.11.0"
+    "nodemon": "1.18.3"
   }
 }
