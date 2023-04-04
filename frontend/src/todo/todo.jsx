@@ -20,6 +20,7 @@ export default class Todo extends Component{
         this.handleRemove = this.handleRemove.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
+        this.handleClear = this.handleClear.bind(this)
 
         this.refresh()
     }
@@ -31,7 +32,6 @@ export default class Todo extends Component{
         axios.get(`${URL}?sort=-createdAt${search}`)
             .then(resp => this.setState({...this.state, description, list: resp.data}))
         
-        console.log(this.state.list)
     }
 
     handleSearch(){
@@ -63,6 +63,10 @@ export default class Todo extends Component{
             .then(resp => this.refresh(this.state.description))
     }
 
+    handleClear(){
+        this.refresh()
+    }
+
 
 
 
@@ -70,7 +74,7 @@ export default class Todo extends Component{
         return(
             <div>
                 <PageHeader name='Tarefas' small='Cadastro'/>
-                <TodoForm description={this.state.description} handleChange={this.handleChange} handleAdd={this.handleAdd} handleSearch={this.handleSearch}/>
+                <TodoForm description={this.state.description} handleChange={this.handleChange} handleAdd={this.handleAdd} handleSearch={this.handleSearch} handleClear={this.handleClear}/>
                 <TodoList list={this.state.list} handleMarkAsPending={this.handleMarkAsPending} handleMarkAsDone={this.handleMarkAsDone} handleRemove={this.handleRemove}/>
             </div>
         
