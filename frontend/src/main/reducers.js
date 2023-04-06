@@ -3,20 +3,20 @@ import { combineReducers} from 'redux'
 const rootReducer = combineReducers({
 
     todo: () => ({
-        descriptions: 'Ler livro',
+        description: 'Ler livro',
         list: [{
             _id: 1,
-            descriptions: 'Pagar Fatura',
+            description: 'Pagar Fatura',
             done: true
         },
         {
             _id: 2,
-            descriptions: 'Reunião',
+            description: 'Reunião',
             done: false 
         },
         {
             _id: 3,
-            descriptions: 'Consulta',
+            description: 'Consulta',
             done: false 
         }]
     })
