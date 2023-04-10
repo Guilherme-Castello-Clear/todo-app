@@ -9,7 +9,6 @@ const TodoList = props => {
 
     const renderRows = () => {
         const lista = props.list || []
-        console.log(lista)
         return(
             lista.map(list => {
                 return(

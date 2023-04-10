@@ -41,7 +41,7 @@ class TodoForm extends Component {
                     <input value={this.props.description} onChange={this.props.changeDescription} id='description' className='form-control' placeholder='Adicione uma tarefa' onKeyUp={this.keyHandler}/>
                 </Grid>
                 <Grid cols='12 3 2'>
-                    <IconButton style='primary' icon='plus' onClick={() => add(description)}></IconButton>
+                    <IconButton style='primary' icon='plus' onClick={() => add()}></IconButton>
                     <IconButton style='info' icon='search' onClick={() => search()}></IconButton>
                     <IconButton style='default' icon='close' onClick={() => this.props.clear()}></IconButton>
                 </Grid>
